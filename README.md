@@ -35,7 +35,14 @@ This repository contains multiple files that provide context about different asp
 | `engineering-roadmap-2025.md` | Technical roadmap and objectives | Identifies planned technical changes that affect security |
 | `engineering-team-health-survey.md` | Insights into team dynamics and challenges | Reveals organizational factors affecting security implementation |
 | `engineering-survey-quotes.md` | Direct quotes from engineering team members | Provides firsthand perspectives on security challenges and culture |
+| `pentest-consumer-billing-2025.md` | Penetration test report for the billing product | Details specific security vulnerabilities in the billing system |
+| `pentest-api-gateway-2025.md` | Penetration test report for the API gateway | Outlines security issues in the central API access point |
 | `inventory.md` | Asset inventory with technical details | Catalogs systems requiring protection and their attributes |
+| `regulatory-landscape-2025.md` | Overview of regulatory requirements | Outlines compliance obligations and upcoming regulatory changes |
+| `customer-metrics-2025.md` | Analysis of customer acquisition and retention | Provides context on customer value and security impact on trust |
+| `revenue-models-2025.md` | Breakdown of company revenue streams | Details financial impact of security incidents on business operations |
+| `technical-debt-migrations-2025.md` | Technical debt inventory and migration plans | Highlights security implications of technical debt and opportunities in migrations |
+| `bug-bounty-submissions-2025.md` | Recent bug bounty program findings | Shows recently discovered vulnerabilities reported by external researchers |
 | `external-links.md` | Links to external resources | Provides additional context and tools |
 
 ## 🔍 How to Use This Repository
@@ -54,41 +61,39 @@ Review `technology-data-infra-overview-2025.md` and `inventory.md` to understand
 - What is the current state of the infrastructure?
 
 ### Step 3: Identify Security Challenges
-Examine `incidents-2024.md`, `incidents-2025.md`, and `engineering-survey-quotes.md` to:
+Examine `incidents-2024.md`, `incidents-2025.md`, `engineering-survey-quotes.md`, `pentest-consumer-billing-2025.md`, and `pentest-api-gateway-2025.md` to:
 - Identify patterns in security incidents
 - Understand root causes
 - Quantify business impacts of security failures
+- Review specific technical vulnerabilities identified by external security assessments
+- Analyze patterns in bug bounty submissions to identify recurring vulnerability types
 
-### Step 4: Consider Organizational Factors
+### Step 4: Consider Business Context
+Review `regulatory-landscape-2025.md`, `customer-metrics-2025.md`, `revenue-models-2025.md`, and `technical-debt-migrations-2025.md` to understand:
+- How security aligns with business priorities and revenue protection
+- Regulatory compliance requirements and gaps
+- Customer expectations and the impact of security on trust
+- Technical debt challenges and migration opportunities for security improvements
+
+### Step 5: Consider Organizational Factors
 Review `engineering-team-health-survey.md` and `engineering-survey-quotes.md` to understand:
 - Organizational challenges affecting security
 - Team capacity and priorities
 - Cultural factors that might help or hinder security improvements
 
-### Step 5: Align with Business Direction
+### Step 6: Align with Business Direction
 Study `business-strategy-2025.md` and `engineering-roadmap-2025.md` to:
 - Identify upcoming business initiatives that will require security support
 - Understand technical changes that create security opportunities or challenges
 - Find strategic alignment opportunities for security initiatives
 
-### Step 6: Prioritize Security Controls
+### Step 7: Prioritize Security Controls
 Based on your analysis:
 1. Identify security controls that would address multiple incidents
 2. Evaluate controls based on their potential business impact
 3. Consider implementation feasibility given organizational constraints
 4. Prioritize controls with the highest leverage (impact/effort ratio)
 5. Create a roadmap that aligns with business priorities
-
-## 🔑 Key Security Themes to Consider
-
-When analyzing the materials, consider looking for patterns such as:
-
-1. Access control and identity management issues
-2. Data protection and privacy concerns
-3. Supply chain and third-party security
-4. Deployment and change management processes
-5. Infrastructure configuration and management
-6. Security ownership and responsibility allocation
 
 ## 📊 Analysis Approach
 
@@ -107,23 +112,3 @@ When analyzing the incidents and business context:
 3. Map potential security controls to these patterns
 4. Evaluate controls based on their potential leverage
 5. Create a prioritized security roadmap with justifications
-
-## 📝 Assignment Suggestions
-
-This repository can be used for various security assignments:
-
-1. **Security Control Prioritization**: Identify and justify the top 3-5 security controls that would provide the most leverage
-2. **Security Roadmap Development**: Create a 12-month security roadmap aligned with business objectives
-3. **Business Case Development**: Build a business case for a specific security initiative
-4. **Risk Assessment**: Perform a risk assessment based on the provided information
-5. **Security Metrics**: Propose metrics to track security program effectiveness
-
-## 🔒 Learning Objectives
-
-Through working with this repository, students should:
-
-1. Understand how to analyze security incidents for patterns and root causes
-2. Learn to prioritize security controls based on business impact and feasibility
-3. Practice aligning security initiatives with business objectives
-4. Develop skills in communicating security priorities to technical and non-technical stakeholders
-5. Gain experience in making data-driven security decisions

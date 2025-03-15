@@ -25,7 +25,7 @@
 ---
 
 ### 🔴 Incident #13 – Supply Chain Library Vulnerability Patch Delayed
-- **Summary**: BitShipper’s widely-used Java library (`QuickShip`) experienced a critical vulnerability; security team recommended immediate patching but execution delayed.
+- **Summary**: BitShipper's widely-used Java library (`QuickShip`) experienced a critical vulnerability; security team recommended immediate patching but execution delayed.
 - **Impact**:
   - Vulnerability remained open in production for 10 days, increasing risk of data breaches.
   - Required emergency response disrupting development workflows.
@@ -35,15 +35,34 @@
 
 ---
 
-## 🔴 **Incident #16 – Unauthorized Internal Wiki Exposure**
-- **Summary**: An internal documentation wiki containing strategic product roadmaps and financial forecasts was publicly accessible due to improper access controls, discovered after 5 days.
-- **Impact**:
-  - Potential loss of competitive advantage due to proprietary information exposure.
-- **Resolution Actions and Timelines/Delays**:
-  - Immediately secured wiki permissions.
-  - Long-term RBAC solution for documentation delayed by 3 months due to competing priorities.
+## 🔴 Incident #21 – Major Outage Due to Untested Software Update
+**Summary:**  
+An update to the logistics scheduling service was deployed without comprehensive QA testing, causing widespread system instability and downtime.
+
+**Impact:**  
+- Logistics scheduling down for 2.5 hours, affecting all customers.
+- Over 250 orders delayed; significant increase in customer support calls.
+
+**Resolution Actions and Timelines/Delays:**  
+- Rollback completed within 45 minutes of identification.
+- Post-mortem completed promptly; additional testing protocols implemented the following week.
 
 ---
+
+## 🔴 Incident #22 – API Outage from Breaking Change
+**Summary:**  
+A breaking API change, unintentionally deployed in a minor release, disrupted all third-party integrations dependent on shipment tracking endpoints.
+
+**Impact:**  
+- API service disruption lasting 90 minutes.
+- 35% of customers impacted; critical third-party integrations temporarily offline.
+
+**Resolution Actions and Timelines/Delays:**  
+- API reverted within 30 minutes of detection.
+- Improved API version control policy drafted; approval delayed by two weeks due to internal reviews.
+
+---
+
 
 ## 🔴 Incident #17 – API Failure due to Improper Permission Changes
 - **Summary**: Unauthorized changes to API permissions by a junior engineer lacking proper access restrictions caused customer-facing APIs to fail intermittently for 4 hours.
@@ -65,13 +84,31 @@
 
 ---
 
-## 🔴 Incident #19 – Major API Outage Due to Unreviewed Code Deployment
-- **Summary**: Unauthorized personnel from the analytics department deployed unreviewed code directly to production, resulting in API failure lasting 2.5 hours.
-- **Impact**:
-  - Halted logistics tracking services impacting thousands of real-time orders.
-- **Resolution Actions and Timelines/Delays**:
-  - Immediate rollback completed in under 1 hour.
-  - Comprehensive access management controls and training delayed repeatedly; currently rescheduled for next quarter.
+## 🔴 Incident #23 – Database Migration Misconfiguration
+**Summary:**  
+A production database migration had incorrect configuration parameters, causing partial data corruption and significant service degradation in shipment processing.
+
+**Impact:**  
+- Shipment processing slowed significantly over 4 hours.
+- Increased latency affecting 60% of customers during peak hours.
+
+**Resolution Actions and Timelines/Delays:**  
+- Configuration fixed, and database restored within 2 hours.
+- Immediate improvements to migration checklist implemented; automation of future migrations planned but delayed until next quarter.
+
+---
+
+## 🔴 Incident #24 – CDN Misconfiguration Causing Slow Customer Portal
+**Summary:**  
+An incorrectly applied caching rule in the CDN significantly degraded loading times for the customer-facing portal.
+
+**Impact:**  
+- Increased page load times (10-15 seconds) affecting approximately 40% of users for 3 hours.
+- Spike in negative customer feedback and increased support volume.
+
+**Resolution Actions and Timelines/Delays:**  
+- CDN configuration corrected within 1 hour of discovery.
+- Incident response was prompt; comprehensive CDN configuration training conducted the following week.
 
 ---
 
@@ -82,7 +119,7 @@
   - Compliance risk related to personal information handling.
 - **Resolution Actions and Timelines/Delays**:
   - Removed data within 24 hours of identification.
-  - Strategic initiative to establish formalized data governance repeatedly deprioritized, delaying implementation by 6+ months.
+  - Strategic initiative to establish formalized data governance in progress
 
 ---
 
@@ -103,3 +140,47 @@
 - **Resolution Actions and Timelines/Delays**:
   - Restored container registry within one business day.
   - Proposed granular access controls for container registries delayed repeatedly, with no firm timeline for full implementation.
+
+## 🔴 Incident #25 – Faulty Feature Flag Rollout
+**Summary:**  
+A newly introduced feature flag inadvertently disabled shipment notifications across the platform.
+
+**Impact:**  
+- Notifications halted for 4 hours; customers missed critical shipment updates.
+- Approximately 500 affected customers; moderate reputational damage.
+
+**Resolution Actions and Timelines/Delays:**  
+- Feature flag reverted within 30 minutes after identification.
+- Post-incident review led to improved flag governance implemented immediately.
+
+--- 
+
+## Strategic Considerations for Security Investments
+
+Based on the incident patterns observed in 2025, security professionals should consider the following strategic investment priorities:
+
+1. **Identity and Access Management Overhaul**: Multiple incidents (#11, #17, #21) directly resulted from inadequate access controls and permission management. The recurring nature and delayed remediation of these issues suggest that point solutions are insufficient, and a comprehensive IAM overhaul should be prioritized.
+
+2. **Data Governance Framework**: Incidents involving exposed customer data (#12, #18, #20) indicate systemic issues with data classification, handling, and protection. Investment in a formal data governance framework would address these issues at their root rather than treating symptoms.
+
+3. **Change Management Processes**: Several incidents (#21, #22, #23, #25) resulted from inadequate testing, review, or control of changes to production systems. Security investments should include improved change management processes, particularly around feature flags and configuration changes.
+
+4. **Dependency Management Automation**: The delayed patching of the vulnerable library (#13) highlights the need for automated dependency management and patching processes to reduce the time between vulnerability discovery and remediation.
+
+5. **Operational Resilience**: The pattern of outages affecting customer-facing services suggests the need for investments in operational resilience, including automated rollback capabilities, improved monitoring, and redundancy for critical services.
+
+6. **Investment Timing Considerations**:
+   - The repeated delays in implementing security improvements (IAM overhaul, data classification standards) suggest that large, complex security initiatives are unlikely to succeed without dedicated resources and executive sponsorship.
+   - Security investments should be broken into smaller, incremental improvements that can be implemented despite competing priorities.
+
+7. **Avoid Premature Investment Areas**:
+   - Complex security governance frameworks would likely fail given the current challenges with basic security hygiene
+   - Advanced security tools requiring significant operational overhead would likely be deprioritized as seen with other security initiatives
+   - Security investments requiring cross-team coordination may struggle without addressing the underlying prioritization conflicts first
+
+8. **Measurement Opportunities**:
+   - Track the time between incident recurrence of similar types to measure effectiveness of remediation
+   - Monitor the implementation rate of post-incident action items as a leading indicator of security improvement
+   - Measure the percentage of security initiatives that are delayed or deprioritized to identify organizational barriers
+
+The 2025 incidents reveal a pattern of security improvements being delayed or deprioritized in favor of feature development, suggesting that security investments should focus on approaches that can be implemented incrementally and align closely with business priorities to avoid the same fate.
